@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="gray">#C7C7C7</color>
+    <color name="press_effect">#E6E6E6</color>
+    <color name="bg_gray">#E0E0E0</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="littleBlue">#0099ff</color>
+    <color name="blue_press">#008FED</color>
+    <color name="blue">#34a7f2</color>
+    <color name="backgroud">#eeeeee</color>
+    <color name="cancelGray">#6C6C6C</color>
+    <color name="textGray">#555555</color>
+    <color name="line">#DFDFDF</color>
+
+    <color name="red">#ff6699</color>
+    <color name="red_press">#ff9999</color>
+
+
+    <!--颜色代码值-->
+    <color name="color_718093">#718093</color>
+    <color name="color_192A56">#192A56</color>
+    <color name="color_F5F6FA">#F5F6FA</color>
+
+
+
+</resources>

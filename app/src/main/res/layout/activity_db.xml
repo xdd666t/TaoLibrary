@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="dbVM"
+            type="com.demo.widget.activity.db.DBVM" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/insert_edittext"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:hint="插入数据"
+                android:textColorHint="#CCCCCC"/>
+            <Button
+                android:id="@+id/insert"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="执行插入"/>
+            <Button
+                android:id="@+id/insert_cleardata"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="清除"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/update_before_edittext"
+                android:layout_width="0dp"
+                android:layout_weight="2.5"
+                android:layout_height="wrap_content"
+                android:hint="更新前内容"
+                android:textColorHint="#CCCCCC"/>
+            <EditText
+                android:id="@+id/update_after_edittext"
+                android:layout_width="0dp"
+                android:layout_weight="2.5"
+                android:layout_height="wrap_content"
+                android:hint="更新后内容"
+                android:textColorHint="#CCCCCC"/>
+            <Button
+                android:id="@+id/update"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="执行更新"/>
+            <Button
+                android:id="@+id/update_cleardata"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="清除"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/delete_edittext"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:hint="需要删除的内容"
+                android:textColorHint="#CCCCCC"/>
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="指定删除"/>
+            <Button
+                android:id="@+id/delete_cleardata"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="删除全部" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/query"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查询所有"/>
+        <Button
+            android:id="@+id/query_clear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="清除查询"/>
+
+
+        <TextView
+            android:id="@+id/query_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="暂无查询内容"
+            android:textColorHint="#CCCCCC"
+            android:textColor="#6666FF"
+            android:textSize="25dp"
+            android:text="@{dbVM.queryContent}"/>
+    </LinearLayout>
+
+</layout>
+

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!--设置阴影效果-->
+    <!--设置阴影效果-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_calendar_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/ll_calendar_week"
+            android:orientation="horizontal"
+            android:background="#F5F6FA"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_calendar_week_seven"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="日"
+                android:textColor="@color/color_192A56"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_calendar_week_one"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="一"
+                android:textColor="@color/color_192A56"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_calendar_week_two"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="二"
+                android:textColor="@color/color_192A56"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_calendar_week_three"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="三"
+                android:textColor="@color/color_192A56"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_calendar_week_four"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="四"
+                android:textColor="@color/color_192A56"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_calendar_week_five"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="五"
+                android:textColor="@color/color_192A56"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_calendar_week_six"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="六"
+                android:textColor="@color/color_192A56"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--背景: 添加月-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,118 @@
+<resources>
+
+    <!--资源文件必须要加上后缀或前缀  和引用的项目资源文件区分开 ，
+        引用的代码，会优先使用引用项目同名的配置-->
+
+    <!--弹窗动画-->
+    <style name="BottomAnim_Tao" parent="android:Animation">
+        <!--//进入时的动画-->
+        <item name="android:windowEnterAnimation">@anim/bottom_dialog_enter</item>
+        <!--//退出时的动画-->
+        <item name="android:windowExitAnimation">@anim/bottom_dialog_exit</item>
+    </style>
+    <!--弹窗动画-->
+    <style name="BottomAnimNotEnter_Tao" parent="android:Animation">
+        <!--//退出时的动画-->
+        <item name="android:windowExitAnimation">@anim/bottom_dialog_exit</item>
+    </style>
+    <!--弹窗动画-->
+    <style name="BottomAnimNotExit_Tao" parent="android:Animation">
+        <!--//进入时的动画-->
+        <item name="android:windowEnterAnimation">@anim/bottom_dialog_enter</item>
+    </style>
+
+
+    <!--弹窗动画-->
+    <style name="TopAnim_Tao" parent="android:Animation">
+        <!--//进入时的动画-->
+        <item name="android:windowEnterAnimation">@anim/top_dialog_enter</item>
+        <!--//退出时的动画-->
+        <item name="android:windowExitAnimation">@anim/top_dialog_exit</item>
+    </style>
+
+
+    <!--背景变暗-->
+    <style name="Dialog_Tao" parent="android:Theme.DeviceDefault.Light.Dialog.MinWidth">
+        <!--边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--无标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--弹窗背景是否变暗-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--透明背景-->
+        <item name="android:background">@android:color/transparent</item>
+        <!--窗口背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--背景不变暗-->
+    <style name="DialogNotDim_Tao" parent="android:Theme.DeviceDefault.Light.Dialog.MinWidth">
+        <!--边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--无标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--弹窗背景是否变暗-->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!--透明背景-->
+        <item name="android:background">@android:color/transparent</item>
+        <!--窗口背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--底部分割, 背景变暗-->
+    <style name="DialogBottom_Tao" parent="android:Theme.DeviceDefault.Light.Dialog.MinWidth">
+        <!--是否有边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--无标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--弹窗背景是否变暗-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--透明背景-->
+        <item name="android:background">@android:color/transparent</item>
+        <!--窗口背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--背景变暗, 圆角,透明背景-->
+    <style name="DialogRound_Tao" parent="android:Theme.DeviceDefault.Light.Dialog.MinWidth">
+        <!--是否浮在窗口之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否显示title-->
+        <item name="android:windowNoTitle">true</item>
+        <!--dialog之外没有焦点的区域是否罩上黑色半透明-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--设置背景, 圆角-->
+        <item name="android:background">@drawable/t_round_corner</item>
+        <!--背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--背景变暗, 圆角, 白色背景-->
+    <style name="DialogBgWhite_Tao" parent="android:Theme.DeviceDefault.Light.Dialog.MinWidth">
+        <!--是否浮在窗口之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否显示title-->
+        <item name="android:windowNoTitle">true</item>
+        <!--dialog之外没有焦点的区域是否罩上黑色半透明-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--设置背景, 白色-->
+        <item name="android:background">@android:color/white</item>
+        <!--背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>

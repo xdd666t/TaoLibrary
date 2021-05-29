@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:gravity="center_horizontal">
+
+    <com.taolibrary.widget.view.round.RoundView
+        android:id="@+id/rd_eg"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:stroke_color="@color/red"
+        app:isCircle="true">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/ic_test_backup"
+            android:scaleType="fitXY"/>
+    </com.taolibrary.widget.view.round.RoundView>
+
+</LinearLayout>

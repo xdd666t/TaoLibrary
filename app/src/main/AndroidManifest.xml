@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.demo">
+    <!-- 访问Internet -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 联网权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <!--
+        添加这句也可以解除http访问限制，该设置的意思，表示的是支持明文传输
+        android:usesCleartextTraffic="true"
+        targetSdkVersion >= 29 && compileSdkVersion >= 29, 豁免 Android Q 的外部存储沙箱限制
+        android:requestLegacyExternalStorage="true"
+    -->
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_app"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".widget.activity.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".widget.activity.TestActivity"></activity>
+        <activity android:name=".widget.activity.dialog.DialogActivity" />
+        <activity android:name=".widget.activity.file.FileActivity" />
+        <activity android:name=".widget.activity.db.DBActivity" />
+        <activity android:name=".widget.activity.net.NetActivity" />
+        <activity android:name=".widget.activity.view.UserViewActivity" />
+        <activity android:name=".widget.activity.view.view.RoundViewActivity" />
+        <activity android:name=".widget.activity.view.view.CalendarListActivity" />
+
+
+        <!--
+        此处一定要注意，authorities可以可以修改格式为  包名.fileProvider
+        在代码中一定要使用 FileLibrary中的 setOpenFileAuthorities("包名.fileProvider") 设置
+        -->
+        <!-- setOpenFileAuthorities  代码中默认设置的是  "com.ytaolibrary.fileProvider" -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.taolibrary.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
