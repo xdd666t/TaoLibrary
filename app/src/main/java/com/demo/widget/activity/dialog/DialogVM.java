@@ -11,13 +11,12 @@ import java.util.List;
  * 创建时间: 2020/5/27 23:30
  */
 public class DialogVM extends ViewModel {
-    private DialogModel mDialogModel = new DialogModel();
-
     //监听一些数据变化，view层做相应处理
-    private MutableLiveData<List<String>> mList = new MutableLiveData<>();
+    private final MutableLiveData<List<String>> mList = new MutableLiveData<>();
 
     public DialogVM() {
-        mList.postValue(mDialogModel.getList());
+        DialogModel dialogModel = new DialogModel();
+        mList.postValue(dialogModel.getList());
     }
 
     public MutableLiveData<List<String>> getList() {

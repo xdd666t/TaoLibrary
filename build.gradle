@@ -7,7 +7,7 @@ buildscript {
     dependencies {
         //升高版本，存在不兼容问题 导致该问题的原因已经定位到是JDK版本过低问题
         //请升高JDK版本，目前本人jdk为：jdk1.8.0_231
-        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath "com.android.tools.build:gradle:3.6.0"
         //加入bintray-release插件: https://github.com/novoda/bintray-release
         classpath 'com.novoda:bintray-release:0.9.1'
     }

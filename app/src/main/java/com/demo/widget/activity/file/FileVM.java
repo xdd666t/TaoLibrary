@@ -11,13 +11,12 @@ import java.util.List;
  * 创建时间: 2020/5/27 23:38
  */
 public class FileVM extends ViewModel {
-    private FileModel mFileModel = new FileModel();
-
     //监听一些数据变化，view层做相应处理
-    private MutableLiveData<List<String>> mList = new MutableLiveData<>();
+    private final MutableLiveData<List<String>> mList = new MutableLiveData<>();
 
     public FileVM() {
-        mList.postValue(mFileModel.getList());
+        FileModel fileModel = new FileModel();
+        mList.postValue(fileModel.getList());
     }
 
     public MutableLiveData<List<String>> getList() {
