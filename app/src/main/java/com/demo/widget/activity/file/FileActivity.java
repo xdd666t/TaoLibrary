@@ -1,11 +1,18 @@
 package com.demo.widget.activity.file;
 
+import static com.taolibrary.BaseFunction.showToast;
+
 import android.content.Context;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.demo.R;
 import com.demo.base.BaseActivity;
@@ -17,13 +24,6 @@ import com.taolibrary.widget.dialog.DialogLibrary;
 
 import java.io.File;
 import java.util.List;
-
-import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.GridLayoutManager;
-
-import static com.taolibrary.BaseFunction.showToast;
 
 /**
  * Author 余涛
@@ -47,7 +47,7 @@ public class FileActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        mBinding = DataBindingUtil.setContentView(this,  R.layout.activity_file);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_file);
         setContentView(mBinding.getRoot());
     }
 
@@ -78,7 +78,7 @@ public class FileActivity extends BaseActivity {
         };
         mSingleRvAdapter.setOnItemClickListener(new SingleRvAdapter.OnItemClickListener() {
             @Override public void onItemClick(int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         downloadFile();
                         break;
@@ -95,7 +95,6 @@ public class FileActivity extends BaseActivity {
     }
 
 
-
     /**
      * 下载文件
      */
@@ -103,8 +102,8 @@ public class FileActivity extends BaseActivity {
 //        String downloadUrl = "http://finedo.cn/finedosite/download/planmarketNO4A.apk";
         String downloadUrl = "https://www.pgyer.com/app/installUpdate/e5709c14c8c54fbbfa8cc29e1fed69ce?sig=ImSk7wWMr%2BvvmjX4Dv22lbsZ5Evu6qNNBFzC7XNT1lnDxFbKyPyGJuMQnY%2BcNIgP";
         String defaultFolder = Environment.getExternalStorageDirectory() + "/1/1";
-        mFileLibrary.setDownloadDialog("下载文件","正在下载文件，请稍等。。。")
-                .downloadFile(downloadUrl,"test.apk", defaultFolder,
+        mFileLibrary.setDownloadDialog("下载文件", "正在下载文件，请稍等。。。")
+                .downloadFile(downloadUrl, "test.apk", defaultFolder,
                         new IFile.OnDownloadFileListener() {
                             @Override
                             public void onSuccess(File file) {
@@ -161,6 +160,4 @@ public class FileActivity extends BaseActivity {
         File file = new File(Environment.getExternalStorageDirectory() + "/1/1", "100MB-tokyo.bin");
         mFileLibrary.openFile(file);
     }
-
-
 }
