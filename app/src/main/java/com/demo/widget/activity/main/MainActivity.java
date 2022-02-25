@@ -2,6 +2,7 @@ package com.demo.widget.activity.main;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Debug;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
@@ -50,7 +51,8 @@ public class MainActivity extends BaseActivity {
 
     private void setAdapter() {
         mMainVM.getList().observe(this, new Observer<List<String>>() {
-            @Override public void onChanged(List<String> strings) {
+            @Override
+            public void onChanged(List<String> strings) {
                 mSingleRvAdapter.updateData(strings);
             }
         });
@@ -65,11 +67,18 @@ public class MainActivity extends BaseActivity {
             }
         };
         mSingleRvAdapter.setOnItemClickListener(new SingleRvAdapter.OnItemClickListener() {
-            @Override public void onItemClick(int position) {
-                switch (position){
+            @Override
+            public void onItemClick(int position) {
+                switch (position) {
                     case 0:
+                        //开始埋点，“app”是最后生成的性能分析文件
+                        Debug.startMethodTracing("App");
+
                         mIntent.setClass(context, DialogActivity.class);
                         startActivity(mIntent);
+
+                        //埋点结束，期间start 到 stop 之间的代码，就是你要测试的代码范围
+                        Debug.stopMethodTracing();
                         break;
                     case 1:
                         mIntent.setClass(context, FileActivity.class);
